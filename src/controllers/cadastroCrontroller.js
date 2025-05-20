@@ -49,6 +49,7 @@ exports.createCadastro = async (req, res) => {
 
 // Obter todos os cadastros
 exports.getAllCadastros = async (req, res) => {
+  console.log("getAllCadastros ");
   try {
     const [rows] = await pool.query('SELECT * FROM cadastro');
     res.status(200).json(rows);

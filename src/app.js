@@ -1,6 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const cadastroRoutes = require('./routes/cadastroRoutes');
+const loginRoutes = require('./routes/loginRoutes');
 
 // Carrega variáveis de ambiente do arquivo .env
 dotenv.config({ path: require('path').resolve(__dirname, '../.env') });
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Rotas da API
 app.use('/api', cadastroRoutes); // Prefixo /api para todas as rotas de cadastro
+app.use('/api', loginRoutes); // Prefixo /api para todas as rotas 
 
 app.get('/', (req, res) => res.send('API Cadastro Rodando!'));
 
